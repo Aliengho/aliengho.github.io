@@ -3,33 +3,42 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hélio Cuna</title>
-<meta name="description" content="Hélio Julião Paulo Cuna — estudante e desenvolvedor. Sites, bots e aplicações.">
-<meta property="og:title" content="Hélio Julião Paulo Cuna">
+<title>Hélio Cuna · Alien Ghost</title>
+<meta name="description" content="Portfólio de Hélio Julião Paulo Cuna (Aliengho) — estudante e desenvolvedor: sites, bots e apps.">
+<meta property="og:title" content="Hélio Julião Paulo Cuna · Alien Ghost">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/177729022?v=4">
 <link rel="icon" href="https://avatars.githubusercontent.com/u/177729022?s=64">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
 <body data-page="inicio">
-<main class="wrap">
-  <section class="intro">
-    <div>
-      <p class="eyebrow">Estudante · Desenvolvedor</p>
-      <h1>Hélio Julião<br>Paulo Cuna</h1>
-      <p class="lead">Faço <strong>sites</strong>, <strong>bots de WhatsApp</strong> e pequenas <strong>aplicações</strong>. Estou a aprender todos os dias e gosto de transformar ideias em coisas que funcionam.</p>
-      <div class="actions">
-        <a class="btn primary" href="projetos.html">Ver projetos</a>
-        <a class="btn" href="sobre.html">Sobre mim</a>
+<main>
+  <header class="hero">
+    <div class="wrap">
+      <div>
+        <span class="tag"><i class="dot"></i> Disponível para projetos</span>
+        <h1>Olá, sou o<br><span class="grad">Hélio Julião<br>Paulo Cuna</span></h1>
+        <div class="type">Eu crio <b id="typed"></b><span class="caret"></span></div>
+        <div class="cta">
+          <a href="projetos.html" class="btn main" data-icon="arrow">Ver projetos</a>
+          <a href="https://github.com/Aliengho" target="_blank" rel="noopener" class="btn ghost" data-icon="github">GitHub</a>
+          <a href="contacto.html" class="btn ghost" data-icon="chat">Contacto</a>
+        </div>
+      </div>
+      <div class="avatar">
+        <img src="https://avatars.githubusercontent.com/u/177729022?v=4" alt="Foto de Hélio Cuna">
+        <div class="badge b1" data-icon="code">Developer</div>
+        <div class="badge b2" data-icon="pin">Moçambique</div>
       </div>
     </div>
-    <img src="https://avatars.githubusercontent.com/u/177729022?v=4" alt="Hélio Cuna">
-  </section>
+  </header>
 
   <section>
-    <h2>Projetos recentes</h2>
-    <div id="featured"><p class="empty">A carregar…</p></div>
-    <p style="margin-top:24px"><a class="link" href="projetos.html">Todos os projetos →</a></p>
+    <div class="wrap">
+      <div class="sec-title rv"><span class="n mono">//</span><h2>Projetos recentes</h2><span class="ln"></span></div>
+      <div class="projects" id="projects" data-limit="3"><div class="skel"></div><div class="skel"></div><div class="skel"></div></div>
+      <div class="more rv"><a href="projetos.html" class="btn ghost" data-icon="arrow">Todos os projetos</a></div>
+    </div>
   </section>
 </main>
 <script src="main.js"></script>
