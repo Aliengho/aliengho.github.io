@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hélio Cuna · Alien Ghost</title>
+<meta name="description" content="Portfólio de Hélio Julião Paulo Cuna (Aliengho) — estudante e desenvolvedor: sites, bots e apps.">
+<meta property="og:title" content="Hélio Julião Paulo Cuna · Alien Ghost">
+<meta property="og:description" content="Estudante e desenvolvedor — sites, bots de WhatsApp e apps.">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/177729022?v=4">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👽</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07080d; --bg2:#0d0f18; --card:#111423; --line:#1f2438;
+  --text:#e8eaf3; --muted:#8b91a8; --accent:#4ef0a0; --accent2:#8b7bff;
+  --glow:0 0 40px rgba(78,240,160,.25);
+}
+:root[data-theme="light"]{
+  --bg:#f6f7fb; --bg2:#eceef6; --card:#ffffff; --line:#dde0ec;
+  --text:#141726; --muted:#5b6178; --accent:#0a9c62; --accent2:#5b48e8;
+  --glow:0 0 30px rgba(10,156,98,.15);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:"Space Grotesk",system-ui,sans-serif;line-height:1.6;overflow-x:hidden;transition:background .3s,color .3s}
+a{color:inherit;text-decoration:none}
+.mono{font-family:"JetBrains Mono",monospace}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* fundo de estrelas */
+#stars{position:fixed;inset:0;z-index:-1;pointer-events:none}
+
+/* navegação */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 70%,transparent);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:700;font-size:1.15rem;display:flex;gap:8px;align-items:center}
+.logo span{color:var(--accent)}
+.links{display:flex;gap:26px;align-items:center}
+.links a{color:var(--muted);font-size:.95rem;transition:color .2s}
+.links a:hover,.links a.on{color:var(--accent)}
+.btn-icon{background:var(--card);border:1px solid var(--line);color:var(--text);width:38px;height:38px;border-radius:10px;cursor:pointer;font-size:1rem}
+#menu{display:none}
+@media (max-width:760px){
+  #menu{display:block}
+  .links{position:fixed;top:64px;left:0;right:0;flex-direction:column;gap:0;background:var(--bg2);border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:max-height .3s}
+  .links.open{max-height:400px}
+  .links a{padding:14px 20px;width:100%}
+}
+
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:64px}
+.hero .wrap{display:grid;grid-template-columns:1.3fr .9fr;gap:50px;align-items:center}
+.tag{display:inline-flex;gap:8px;align-items:center;padding:6px 14px;border:1px solid var(--line);border-radius:99px;font-size:.85rem;color:var(--muted);background:var(--card)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35}}
+h1{font-size:clamp(2.3rem,6vw,4.2rem);line-height:1.05;margin:20px 0 14px;letter-spacing:-.02em}
+h1 .grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.type{font-size:clamp(1.05rem,2.4vw,1.35rem);color:var(--muted);min-height:2em}
+.type b{color:var(--accent);font-weight:600}
+.caret{display:inline-block;width:2px;height:1.1em;background:var(--accent);vertical-align:middle;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.cta{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+.btn{padding:13px 24px;border-radius:12px;font-weight:600;border:1px solid var(--line);transition:transform .2s,box-shadow .2s;display:inline-flex;gap:8px;align-items:center}
+.btn:hover{transform:translateY(-2px)}
+.btn.main{background:var(--accent);color:#04120b;border-color:var(--accent);box-shadow:var(--glow)}
+.btn.ghost{background:var(--card)}
+.avatar{position:relative;justify-self:center}
+.avatar img{width:min(320px,70vw);aspect-ratio:1;border-radius:32px;object-fit:cover;border:1px solid var(--line);box-shadow:var(--glow);animation:float 6s ease-in-out infinite}
+.avatar::before{content:"";position:absolute;inset:-14px;border-radius:40px;background:conic-gradient(from 0deg,var(--accent),var(--accent2),var(--accent));filter:blur(28px);opacity:.35;z-index:-1;animation:spin 10s linear infinite}
+.badge{position:absolute;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px 14px;font-size:.85rem;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.b1{top:8%;left:-12%}.b2{bottom:10%;right:-10%}
+@keyframes float{50%{transform:translateY(-12px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;text-align:center}.cta{justify-content:center}.avatar{order:-1}.b1{left:-4%}.b2{right:-4%}}
+
+/* secções */
+section{padding:100px 0}
+.sec-title{display:flex;align-items:baseline;gap:14px;margin-bottom:44px}
+.sec-title .n{color:var(--accent);font-size:1rem}
+.sec-title h2{font-size:clamp(1.8rem,4vw,2.5rem)}
+.sec-title .ln{flex:1;height:1px;background:var(--line)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .25s,border-color .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--accent) 50%,var(--line));box-shadow:var(--glow)}
+
+/* sobre */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:30px}
+.about p{color:var(--muted);margin-bottom:16px;font-size:1.05rem}
+.about p b{color:var(--text)}
+.facts{display:grid;gap:12px}
+.fact{display:flex;gap:14px;align-items:center}
+.fact .i{font-size:1.4rem;width:46px;height:46px;display:grid;place-items:center;background:var(--bg2);border-radius:12px;flex-shrink:0}
+.fact small{color:var(--muted);display:block;font-size:.8rem}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+.stat{text-align:center;padding:18px 10px}
+.stat b{display:block;font-size:2rem;color:var(--accent)}
+.stat span{font-size:.85rem;color:var(--muted)}
+@media (max-width:860px){.about{grid-template-columns:1fr}}
+
+/* habilidades */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.skills h3{display:flex;gap:10px;align-items:center;margin-bottom:14px;font-size:1.15rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:6px 12px;border-radius:8px;background:var(--bg2);border:1px solid var(--line);font-size:.88rem}
+
+/* projetos */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+.filters button{background:var(--card);border:1px solid var(--line);color:var(--muted);padding:8px 16px;border-radius:99px;cursor:pointer;font-family:inherit;font-size:.9rem}
+.filters button.on{background:var(--accent);color:#04120b;border-color:var(--accent)}
+.projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.proj{display:flex;flex-direction:column;gap:12px}
+.proj .top{display:flex;justify-content:space-between;align-items:center;font-size:1.6rem}
+.proj .top .ext{font-size:.85rem;color:var(--muted);display:flex;gap:12px}
+.proj .top .ext a:hover{color:var(--accent)}
+.proj h3{font-size:1.15rem;word-break:break-word}
+.proj p{color:var(--muted);font-size:.95rem;flex:1}
+.proj .meta{display:flex;gap:14px;font-size:.82rem;color:var(--muted);align-items:center}
+.lang-dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:6px}
+.skel{height:190px;background:linear-gradient(90deg,var(--card),var(--bg2),var(--card));background-size:200% 100%;animation:sh 1.4s infinite;border-radius:18px}
+@keyframes sh{to{background-position:-200% 0}}
+
+/* jornada */
+.timeline{position:relative;padding-left:30px}
+.timeline::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--accent),var(--accent2))}
+.ev{position:relative;margin-bottom:26px}
+.ev::before{content:"";position:absolute;left:-28px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.ev .when{color:var(--accent);font-size:.85rem}
+.ev h3{font-size:1.1rem;margin:2px 0 4px}
+.ev p{color:var(--muted)}
+
+/* terminal */
+.term{background:#05060a;border:1px solid var(--line);border-radius:16px;overflow:hidden;font-family:"JetBrains Mono",monospace;font-size:.9rem}
+.term .bar{display:flex;gap:7px;padding:12px 14px;background:#0c0e16;border-bottom:1px solid var(--line)}
+.term .bar i{width:12px;height:12px;border-radius:50%;display:block}
+.term .body{padding:18px;color:#c9cfe6;min-height:230px;max-height:320px;overflow:auto}
+.term .body .p{color:#4ef0a0}
+.term input{background:none;border:0;outline:0;color:#e8eaf3;font:inherit;width:70%}
+
+/* contacto */
+.contact{text-align:center;max-width:640px;margin:0 auto}
+.contact p{color:var(--muted);margin:14px 0 28px;font-size:1.05rem}
+.socials{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:var(--muted);font-size:.9rem}
+
+/* animação ao rolar */
+.rv{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+#top{position:fixed;right:20px;bottom:20px;opacity:0;pointer-events:none;transition:opacity .3s;z-index:40}
+#top.show{opacity:1;pointer-events:auto}
+</style>
+</head>
+<body>
+<canvas id="stars"></canvas>
+
+<nav>
+  <div class="wrap">
+    <a href="#inicio" class="logo">👽 <span>Alien</span>Ghost</a>
+    <div class="links" id="links">
+      <a href="#sobre">Sobre</a>
+      <a href="#skills">Habilidades</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#jornada">Jornada</a>
+      <a href="#terminal">Terminal</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <div style="display:flex;gap:8px">
+      <button class="btn-icon" id="theme" title="Mudar tema">🌙</button>
+      <button class="btn-icon" id="menu" title="Menu">☰</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="wrap">
+    <div>
+      <span class="tag"><i class="dot"></i> Disponível para projetos</span>
+      <h1>Olá, sou o<br><span class="grad">Hélio Julião<br>Paulo Cuna</span></h1>
+      <div class="type">Eu crio <b id="typed"></b><span class="caret"></span></div>
+      <div class="cta">
+        <a href="#projetos" class="btn main">🚀 Ver projetos</a>
+        <a href="https://github.com/Aliengho" target="_blank" rel="noopener" class="btn ghost">🐙 GitHub</a>
+        <a href="#contacto" class="btn ghost">✉️ Contacto</a>
+      </div>
+    </div>
+    <div class="avatar">
+      <img src="https://avatars.githubusercontent.com/u/177729022?v=4" alt="Foto de Hélio Cuna">
+      <div class="badge b1">💻 Developer</div>
+      <div class="badge b2">🇲🇿 Moçambique</div>
+    </div>
+  </div>
+</header>
+
+<section id="sobre">
+  <div class="wrap">
+    <div class="sec-title rv"><span class="n mono">01.</span><h2>Sobre mim</h2><span class="ln"></span></div>
+    <div class="about">
+      <div class="rv">
+        <p>Olá! 👋 Sou o <b>Hélio Julião Paulo Cuna</b>, também conhecido como <b>Alien Ghost</b> 👽👻. Sou estudante e apaixonado por <b>programação e tecnologia</b>.</p>
+        <p>Gosto de transformar ideias em coisas reais: <b>sites</b> para negócios, <b>bots de WhatsApp</b> que automatizam conversas e <b>aplicações</b> que resolvem problemas do dia a dia.</p>
+        <p>Estou sempre a aprender algo novo — de <b>HTML e JavaScript</b> a <b>TypeScript, Python, Java e Android</b>. Cada projeto é uma oportunidade para evoluir.</p>
+        <div class="stats">
+          <div class="card stat"><b id="s-repos">—</b><span>Repositórios</span></div>
+          <div class="card stat"><b id="s-langs">—</b><span>Linguagens</span></div>
+          <div class="card stat"><b id="s-years">—</b><span>Anos no GitHub</span></div>
+        </div>
+      </div>
+      <div class="facts rv">
+        <div class="card fact"><span class="i">🎓</span><div><small>Ocupação</small>Estudante &amp; Developer</div></div>
+        <div class="card fact"><span class="i">📍</span><div><small>Localização</small>Moçambique</div></div>
+        <div class="card fact"><span class="i">🤖</span><div><small>Especialidade</small>Bots de WhatsApp &amp; Websites</div></div>
+        <div class="card fact"><span class="i">🗣️</span><div><small>Idiomas</small>Português</div></div>
+        <div class="card fact"><span class="i">🎯</span><div><small>Objetivo</small>Tornar-me um desenvolvedor full-stack</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-title rv"><span class="n mono">02.</span><h2>Habilidades</h2><span class="ln"></span></div>
+    <div class="skills">
+      <div class="card rv"><h3>🎨 Front-end</h3><div class="chips"><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">Design responsivo</span></div></div>
+      <div class="card rv"><h3>⚙️ Back-end</h3><div class="chips"><span class="chip">Node.js</span><span class="chip">Python</span><span class="chip">Java</span><span class="chip">APIs</span></div></div>
+      <div class="card rv"><h3>🤖 Bots &amp; Automação</h3><div class="chips"><span class="chip">Bots de WhatsApp</span><span class="chip">Automação</span><span class="chip">Scripts</span></div></div>
+      <div class="card rv"><h3>📱 Mobile</h3><div class="chips"><span class="chip">Android Studio</span><span class="chip">Java</span><span class="chip">Apps Android</span></div></div>
+      <div class="card rv"><h3>🛠️ Ferramentas</h3><div class="chips"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">VS Code</span><span class="chip">GitHub Pages</span><span class="chip">Terminal</span></div></div>
+      <div class="card rv"><h3>🧠 Soft skills</h3><div class="chips"><span class="chip">Criatividade</span><span class="chip">Resolver problemas</span><span class="chip">Aprender rápido</span><span class="chip">Persistência</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="projetos">
+  <div class="wrap">
+    <div class="sec-title rv"><span class="n mono">03.</span><h2>Projetos</h2><span class="ln"></span></div>
+    <div class="filters rv" id="filters"><button class="on" data-f="all">Todos</button></div>
+    <div class="projects" id="projects">
+      <div class="skel"></div><div class="skel"></div><div class="skel"></div>
+    </div>
+  </div>
+</section>
+
+<section id="jornada">
+  <div class="wrap">
+    <div class="sec-title rv"><span class="n mono">04.</span><h2>Jornada</h2><span class="ln"></span></div>
+    <div class="timeline">
+      <div class="ev rv"><div class="when mono">2024</div><h3>🐙 Entrei no GitHub</h3><p>Criei a conta <b>Aliengho</b> e comecei a publicar os meus primeiros projetos e experiências com código.</p></div>
+      <div class="ev rv"><div class="when mono">2024 – 2025</div><h3>🤖 Bots de WhatsApp</h3><p>Desenvolvi vários bots em JavaScript e TypeScript para automatizar conversas e serviços.</p></div>
+      <div class="ev rv"><div class="when mono">2025</div><h3>🌐 Sites para clientes</h3><p>Criei sites institucionais, como o da <b>NM Móveis</b>, marcenaria e mobiliário sob medida em Maputo.</p></div>
+      <div class="ev rv"><div class="when mono">2026</div><h3>🚀 Portfólio online</h3><p>Lancei este site no GitHub Pages e montei um ambiente de desenvolvimento completo: Python, Node.js, Java, Android Studio e Git.</p></div>
+      <div class="ev rv"><div class="when mono">Próximo</div><h3>🎯 Full-stack &amp; Mobile</h3><p>Continuar a evoluir em back-end, apps Android e projetos maiores.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="terminal">
+  <div class="wrap">
+    <div class="sec-title rv"><span class="n mono">05.</span><h2>Terminal</h2><span class="ln"></span></div>
+    <div class="term rv">
+      <div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div>
+      <div class="body" id="tbody"><div>Bem-vindo ao terminal do Alien Ghost 👽 — escreve <span class="p">ajuda</span> para ver os comandos.</div><div id="tline"><span class="p">hélio@aliengho:~$</span> <input id="tin" autocomplete="off" spellcheck="false" aria-label="comando"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap contact rv">
+    <div class="sec-title" style="justify-content:center"><span class="n mono">06.</span><h2>Vamos conversar?</h2></div>
+    <p>Tens uma ideia de site, bot ou app? Ou queres colaborar num projeto? Fala comigo — respondo assim que puder! 👽</p>
+    <div class="socials">
+      <a class="btn main" href="https://github.com/Aliengho" target="_blank" rel="noopener">🐙 GitHub @Aliengho</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Feito com 💚 por <b>Hélio Julião Paulo Cuna</b> · © <span id="yr"></span> · Alien Ghost 👽👻</div>
+</footer>
+
+<button class="btn-icon" id="top" title="Voltar ao topo">↑</button>
+
+<script>
+// tema claro/escuro
+const root = document.documentElement, themeBtn = document.getElementById('theme');
+function setTheme(t){ root.dataset.theme = t; themeBtn.textContent = t === 'light' ? '☀️' : '🌙'; try{localStorage.setItem('tema', t)}catch(e){} }
+let saved = null; try{ saved = localStorage.getItem('tema') }catch(e){}
+setTheme(saved || 'dark');
+themeBtn.onclick = () => setTheme(root.dataset.theme === 'light' ? 'dark' : 'light');
+
+// menu mobile
+const links = document.getElementById('links');
+document.getElementById('menu').onclick = () => links.classList.toggle('open');
+links.querySelectorAll('a').forEach(a => a.onclick = () => links.classList.remove('open'));
+
+// efeito de escrita
+const words = ['sites modernos 🌐', 'bots de WhatsApp 🤖', 'apps Android 📱', 'automações ⚙️', 'ideias em código 💡'];
+let wi = 0, ci = 0, del = false; const typed = document.getElementById('typed');
+(function type(){
+  const w = words[wi]; typed.textContent = w.slice(0, ci);
+  if (!del && ci++ === w.length) { del = true; return setTimeout(type, 1500); }
+  if (del && ci-- === 0) { del = false; wi = (wi + 1) % words.length; ci = 0; }
+  setTimeout(type, del ? 40 : 85);
+})();
+
+// estrelas
+const cv = document.getElementById('stars'), cx = cv.getContext('2d'); let st = [];
+function size(){ cv.width = innerWidth; cv.height = innerHeight; st = Array.from({length: Math.min(160, innerWidth/8)}, () => ({x: Math.random()*cv.width, y: Math.random()*cv.height, r: Math.random()*1.4+.2, s: Math.random()*.3+.05})); }
+function draw(){
+  cx.clearRect(0,0,cv.width,cv.height);
+  const c = root.dataset.theme === 'light' ? '20,23,38' : '200,255,230';
+  st.forEach(p => { p.y -= p.s; if (p.y < 0) p.y = cv.height; cx.fillStyle = `rgba(${c},${.3+p.r/3})`; cx.beginPath(); cx.arc(p.x,p.y,p.r,0,7); cx.fill(); });
+  requestAnimationFrame(draw);
+}
+size(); draw(); addEventListener('resize', size);
+
+// revelar ao rolar + link ativo
+const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('in')), {threshold:.12});
+function watch(){ document.querySelectorAll('.rv:not(.in)').forEach(el => io.observe(el)); }
+watch();
+const secs = [...document.querySelectorAll('section')], navA = [...links.querySelectorAll('a')], topBtn = document.getElementById('top');
+addEventListener('scroll', () => {
+  const y = scrollY + 120; let cur = '';
+  secs.forEach(s => { if (s.offsetTop <= y) cur = s.id; });
+  navA.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + cur));
+  topBtn.classList.toggle('show', scrollY > 600);
+});
+topBtn.onclick = () => scrollTo({top:0});
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// projetos reais do GitHub
+const colors = {JavaScript:'#f1e05a', TypeScript:'#3178c6', HTML:'#e34c26', CSS:'#563d7c', Python:'#3572A5', Java:'#b07219', Kotlin:'#A97BFF'};
+const icons = {JavaScript:'⚡', TypeScript:'🔷', HTML:'🌐', CSS:'🎨', Python:'🐍', Java:'☕'};
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let repos = [];
+function render(f){
+  const box = document.getElementById('projects');
+  const list = repos.filter(r => f === 'all' || r.language === f);
+  box.innerHTML = list.map(r => `
+    <article class="card proj rv">
+      <div class="top"><span>${icons[r.language] || '📁'}</span>
+        <span class="ext">${r.homepage ? `<a href="${esc(r.homepage)}" target="_blank" rel="noopener">🔗 Site</a>` : ''}<a href="${esc(r.html_url)}" target="_blank" rel="noopener">🐙 Código</a></span></div>
+      <h3>${esc(r.name.replace(/[-_]/g,' '))}</h3>
+      <p>${esc(r.description || 'Projeto em desenvolvimento.')}</p>
+      <div class="meta">${r.language ? `<span><i class="lang-dot" style="background:${colors[r.language]||'#8b91a8'}"></i>${esc(r.language)}</span>` : ''}<span>⭐ ${r.stargazers_count}</span><span>🕒 ${new Date(r.pushed_at).toLocaleDateString('pt-PT')}</span></div>
+    </article>`).join('') || '<p style="color:var(--muted)">Nenhum projeto aqui ainda.</p>';
+  watch();
+}
+fetch('https://api.github.com/users/Aliengho/repos?per_page=100&sort=pushed')
+  .then(r => r.ok ? r.json() : Promise.reject())
+  .then(data => {
+    repos = data.filter(r => !r.fork && r.name.toLowerCase() !== 'aliengho');
+    const langs = [...new Set(repos.map(r => r.language).filter(Boolean))];
+    document.getElementById('s-repos').textContent = repos.length;
+    document.getElementById('s-langs').textContent = langs.length;
+    const fb = document.getElementById('filters');
+    langs.forEach(l => fb.insertAdjacentHTML('beforeend', `<button data-f="${esc(l)}">${icons[l]||''} ${esc(l)}</button>`));
+    fb.onclick = e => { const b = e.target.closest('button'); if (!b) return; fb.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b)); render(b.dataset.f); };
+    render('all');
+  })
+  .catch(() => { document.getElementById('projects').innerHTML = '<p style="color:var(--muted)">Não foi possível carregar agora — vê todos em <a style="color:var(--accent)" href="https://github.com/Aliengho?tab=repositories">github.com/Aliengho</a>.</p>'; });
+fetch('https://api.github.com/users/Aliengho').then(r => r.json()).then(u => {
+  const y = (Date.now() - new Date(u.created_at)) / 31557600000;
+  document.getElementById('s-years').textContent = y < 1 ? '<1' : Math.floor(y) + '+';
+}).catch(() => {});
+
+// terminal interativo
+const tin = document.getElementById('tin'), tbody = document.getElementById('tbody'), tline = document.getElementById('tline');
+const cmds = {
+  ajuda: 'Comandos: <span class="p">sobre</span>, <span class="p">skills</span>, <span class="p">projetos</span>, <span class="p">contacto</span>, <span class="p">github</span>, <span class="p">tema</span>, <span class="p">alien</span>, <span class="p">limpar</span>',
+  sobre: 'Hélio Julião Paulo Cuna 👽 — estudante e developer de Moçambique. Sites, bots e apps.',
+  skills: 'HTML · CSS · JavaScript · TypeScript · Node.js · Python · Java · Android · Git',
+  projetos: () => repos.length ? repos.slice(0,8).map(r => '• ' + esc(r.name)).join('<br>') : 'A carregar projetos…',
+  contacto: 'GitHub: <a class="p" href="https://github.com/Aliengho" target="_blank">github.com/Aliengho</a>',
+  github: () => { open('https://github.com/Aliengho', '_blank'); return 'A abrir o GitHub… 🐙'; },
+  tema: () => { themeBtn.click(); return 'Tema alterado ✨'; },
+  alien: '<pre>   .-""""-.\n  /  👽    \\\n |  O    O  |\n  \\  .--.  /\n   `-.__.-`   Nós vimos-te! 👻</pre>',
+  sudo: 'Boa tentativa 😏 — aqui é preciso senha!'
+};
+tin.addEventListener('keydown', e => {
+  if (e.key !== 'Enter') return;
+  const c = tin.value.trim().toLowerCase(); tin.value = '';
+  const echo = document.createElement('div'); echo.innerHTML = `<span class="p">hélio@aliengho:~$</span> ${esc(c)}`;
+  tbody.insertBefore(echo, tline);
+  if (c === 'limpar' || c === 'clear') { [...tbody.children].forEach(n => n !== tline && n.remove()); return; }
+  if (!c) return;
+  const out = document.createElement('div'); const h = cmds[c];
+  out.innerHTML = h ? (typeof h === 'function' ? h() : h) : `Comando não encontrado: ${esc(c)}. Escreve <span class="p">ajuda</span>.`;
+  tbody.insertBefore(out, tline); tbody.scrollTop = tbody.scrollHeight;
+});
+document.querySelector('.term').addEventListener('click', () => tin.focus());
+</script>
+</body>
+</html>
