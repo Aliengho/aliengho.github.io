@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projetos · Hélio Cuna</title>
+<meta name="description" content="Projetos de Hélio Julião Paulo Cuna — sites, apps, bots e servidores.">
+<meta property="og:title" content="Hélio Julião Paulo Cuna · Alien Ghost">
+<meta property="og:description" content="Estudante de Engenharia Informática na UJAC — programador full-stack: web, mobile, bots e servidores.">
+<meta property="og:image" content="https://aliengho.github.io/foto.jpg">
+<link rel="icon" href="foto.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="stars"></canvas>
+
+<nav>
+  <div class="wrap">
+    <a href="index.html" class="logo"><span>Alien</span>Ghost</a>
+    <div class="links" id="links">
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="projetos.html" aria-current="page">Projetos</a>
+      <a href="contacto.html">Contacto</a>
+    </div>    <div style="display:flex;gap:8px">
+      <button class="btn-icon" id="theme" title="Mudar tema"></button>
+      <button class="btn-icon" id="menu" title="Menu" data-icon="menu"></button>
+    </div>
+  </div>
+</nav>
+
+<div class="page-head wrap rv">
+  <span class="tag"><i class="dot"></i> Projetos</span>
+  <h1>O que tenho <span class="grad">construído</span></h1>
+  <p>Todos os meus projetos públicos no GitHub. A lista atualiza-se sozinha sempre que publico algo novo.</p>
+</div>
+
+<section id="projetos">
+  <div class="wrap">
+    <div class="sec-title rv"><span class="n mono">01.</span><h2>Todos os projetos</h2><span class="ln"></span></div>
+    <div class="filters rv" id="filters"><button class="on" data-f="all">Todos</button></div>
+    <div class="projects" id="projects">
+      <div class="skel"></div><div class="skel"></div><div class="skel"></div>
+    </div>
+  </div>
+</section>
+
+<div class="next wrap rv"><a href="contacto.html" class="btn main" data-icon="chat">Tens um projeto? Fala comigo</a></div>
+
+<footer>
+  <div class="wrap">Feito por <b>Hélio Julião Paulo Cuna</b> · © <span id="yr"></span> · Alien Ghost</div>
+</footer>
+
+<button class="btn-icon" id="top" title="Voltar ao topo" data-icon="up"></button>
+
+<script src="main.js"></script>
+</body>
+</html>

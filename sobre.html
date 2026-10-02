@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sobre · Hélio Cuna</title>
+<meta name="description" content="Sobre Hélio Julião Paulo Cuna — estudante de Engenharia Informática na UJAC e programador full-stack.">
+<meta property="og:title" content="Hélio Julião Paulo Cuna · Alien Ghost">
+<meta property="og:description" content="Estudante de Engenharia Informática na UJAC — programador full-stack: web, mobile, bots e servidores.">
+<meta property="og:image" content="https://aliengho.github.io/foto.jpg">
+<link rel="icon" href="foto.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="stars"></canvas>
+
+<nav>
+  <div class="wrap">
+    <a href="index.html" class="logo"><span>Alien</span>Ghost</a>
+    <div class="links" id="links">
+      <a href="index.html">Início</a>
+      <a href="sobre.html" aria-current="page">Sobre</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="contacto.html">Contacto</a>
+    </div>    <div style="display:flex;gap:8px">
+      <button class="btn-icon" id="theme" title="Mudar tema"></button>
+      <button class="btn-icon" id="menu" title="Menu" data-icon="menu"></button>
+    </div>
+  </div>
+</nav>
+
+<div class="page-head wrap rv">
+  <span class="tag"><i class="dot"></i> Sobre mim</span>
+  <h1>Quem é o <span class="grad">Alien Ghost</span></h1>
+  <p>Estudante de Engenharia Informática na UJAC e programador full-stack. O meu percurso, formação e ferramentas.</p>
+</div>
+
+<section id="sobre">
+  <div class="wrap">
+    <div class="sec-title rv"><span class="n mono">01.</span><h2>Sobre mim</h2><span class="ln"></span></div>
+    <div class="about">
+      <div class="rv">
+        <p>Olá! Sou o <b>Hélio Julião Paulo Cuna</b>, também conhecido como <b>Alien Ghost</b>. Sou estudante de <b>Engenharia Informática</b> na <b>Universidade Joaquim Alberto Chissano (UJAC)</b> e apaixonado por <b>programação e tecnologia</b>.</p>
+        <p>Sou <b>programador full-stack</b>: trabalho do front-end ao servidor. Faço <b>sites</b> para negócios, <b>apps móveis</b>, <b>bots de WhatsApp</b> e as <b>APIs e bases de dados</b> por trás deles.</p>
+        <p>Programo em <b>Java, Python e JavaScript</b>, uso <b>Node.js</b>, <b>React Native</b> e <b>Kotlin</b>, e trabalho com <b>MySQL, PostgreSQL e Docker</b>. Neste momento estou a aprender <b>PHP</b>.</p>
+        <div class="stats">
+          <div class="card stat"><b id="s-repos">—</b><span>Repositórios</span></div>
+          <div class="card stat"><b id="s-langs">—</b><span>Linguagens</span></div>
+          <div class="card stat"><b id="s-years">—</b><span>Anos no GitHub</span></div>
+        </div>
+      </div>
+      <div class="facts rv">
+        <div class="card fact"><span class="i" data-icon="cap"></span><div><small>Curso</small>Engenharia Informática · UJAC</div></div>
+        <div class="card fact"><span class="i" data-icon="pin"></span><div><small>Localização</small>Moçambique</div></div>
+        <div class="card fact"><span class="i" data-icon="bot"></span><div><small>Especialidade</small>Full-Stack: web, mobile &amp; servidores</div></div>
+        <div class="card fact"><span class="i" data-icon="chat"></span><div><small>Idiomas</small>Português</div></div>
+        <div class="card fact"><span class="i" data-icon="target"></span><div><small>Objetivo</small>Criar produtos completos, do servidor ao app</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="formacao">
+  <div class="wrap">
+    <div class="sec-title rv"><span class="n mono">02.</span><h2>Formação</h2><span class="ln"></span></div>
+    <a class="card edu rv" href="https://www.ujac.ac.mz/" target="_blank" rel="noopener">
+      <img src="ujac.png" alt="Logótipo da UJAC">
+      <div>
+        <small class="mono">Licenciatura · Em curso</small>
+        <h3>Engenharia Informática</h3>
+        <p>Universidade Joaquim Alberto Chissano (UJAC) — Moçambique</p>
+        <span class="edu-link" data-icon="link">ujac.ac.mz</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-title rv"><span class="n mono">03.</span><h2>Habilidades</h2><span class="ln"></span></div>
+    <div class="skills">
+      <div class="card rv"><h3 data-icon="layout">Front-end</h3><div class="chips"><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">Design responsivo</span></div></div>
+      <div class="card rv"><h3 data-icon="server">Back-end</h3><div class="chips"><span class="chip">Node.js</span><span class="chip">Java</span><span class="chip">Python</span><span class="chip">APIs REST</span><span class="chip learn">PHP · a aprender</span></div></div>
+      <div class="card rv"><h3 data-icon="phone">Mobile</h3><div class="chips"><span class="chip">React Native</span><span class="chip">Kotlin</span><span class="chip">Java</span><span class="chip">Android Studio</span></div></div>
+      <div class="card rv"><h3 data-icon="db">Bases de dados</h3><div class="chips"><span class="chip">MySQL</span><span class="chip">PostgreSQL</span></div></div>
+      <div class="card rv"><h3 data-icon="box">Servidores &amp; DevOps</h3><div class="chips"><span class="chip">Docker</span><span class="chip">Servidores</span><span class="chip">Deploy</span><span class="chip">Git</span><span class="chip">GitHub</span></div></div>
+      <div class="card rv"><h3 data-icon="bot">Bots &amp; Automação</h3><div class="chips"><span class="chip">Bots de WhatsApp</span><span class="chip">Automação</span><span class="chip">Scripts</span></div></div>      <div class="card rv"><h3 data-icon="bulb">Soft skills</h3><div class="chips"><span class="chip">Criatividade</span><span class="chip">Resolver problemas</span><span class="chip">Aprender rápido</span><span class="chip">Persistência</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="jornada">
+  <div class="wrap">
+    <div class="sec-title rv"><span class="n mono">04.</span><h2>Jornada</h2><span class="ln"></span></div>
+    <div class="timeline">
+      <div class="ev rv"><div class="when mono">2022</div><h3>Primeiros passos no GitHub</h3><p>Comecei a programar e a publicar os meus primeiros projetos com HTML, CSS e JavaScript.</p></div>
+      <div class="ev rv"><div class="when mono">2024 – 2025</div><h3>Bots de WhatsApp</h3><p>Desenvolvi vários bots em JavaScript e TypeScript para automatizar conversas e serviços.</p></div>
+      <div class="ev rv"><div class="when mono">2025</div><h3>Sites para clientes</h3><p>Criei sites institucionais, como o da <b>NM Móveis</b>, marcenaria e mobiliário sob medida em Maputo.</p></div>
+      <div class="ev rv"><div class="when mono">2026</div><h3>Portfólio online</h3><p>Lancei este portfólio e trabalho como full-stack: Node.js, Java, Python, React Native, Kotlin, MySQL, PostgreSQL e Docker.</p></div>
+      <div class="ev rv"><div class="when mono">Próximo</div><h3>PHP &amp; projetos maiores</h3><p>Dominar PHP e construir sistemas maiores, com mais utilizadores e infraestrutura própria.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="next wrap rv"><a href="projetos.html" class="btn main" data-icon="arrow">Ver os meus projetos</a></div>
+
+<footer>
+  <div class="wrap">Feito por <b>Hélio Julião Paulo Cuna</b> · © <span id="yr"></span> · Alien Ghost</div>
+</footer>
+
+<button class="btn-icon" id="top" title="Voltar ao topo" data-icon="up"></button>
+
+<script src="main.js"></script>
+</body>
+</html>
