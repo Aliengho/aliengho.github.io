@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hélio Cuna · Alien Ghost</title>
-<meta name="description" content="Portfólio de Hélio Julião Paulo Cuna (Aliengho) — estudante e desenvolvedor: sites, bots e apps.">
+<meta name="description" content="Portfólio de Hélio Julião Paulo Cuna (Aliengho) — estudante de Engenharia Informática na UJAC: sites, bots e apps.">
 <meta property="og:title" content="Hélio Julião Paulo Cuna · Alien Ghost">
-<meta property="og:description" content="Estudante e desenvolvedor — sites, bots de WhatsApp e apps.">
+<meta property="og:description" content="Estudante de Engenharia Informática na UJAC — sites, bots de WhatsApp e apps.">
 <meta property="og:image" content="https://aliengho.github.io/foto.jpg">
 <link rel="icon" href="foto.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -108,6 +108,13 @@ section{padding:100px 0}
 /* habilidades */
 .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
 .skills h3{display:flex;gap:10px;align-items:center;margin-bottom:14px;font-size:1.15rem}
+.edu{display:flex;gap:28px;align-items:center}
+.edu img{width:120px;height:120px;object-fit:contain;background:#fff;border-radius:16px;padding:10px;flex-shrink:0}
+.edu small{color:var(--accent);font-size:.8rem}
+.edu h3{font-size:1.5rem;margin:4px 0}
+.edu p{color:var(--muted)}
+.edu-link{display:inline-flex;gap:6px;align-items:center;margin-top:10px;color:var(--accent);font-size:.9rem}
+@media (max-width:600px){.edu{flex-direction:column;text-align:center}}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{padding:6px 12px;border-radius:8px;background:var(--bg2);border:1px solid var(--line);font-size:.88rem}
 
@@ -168,6 +175,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:v
     <a href="#inicio" class="logo"><span>Alien</span>Ghost</a>
     <div class="links" id="links">
       <a href="#sobre">Sobre</a>
+      <a href="#formacao">Formação</a>
       <a href="#skills">Habilidades</a>
       <a href="#projetos">Projetos</a>
       <a href="#jornada">Jornada</a>
@@ -184,7 +192,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:v
 <header class="hero" id="inicio">
   <div class="wrap">
     <div>
-      <span class="tag"><i class="dot"></i> Disponível para projetos</span>
+      <span class="tag"><i class="dot"></i> Engenharia Informática · UJAC</span>
       <h1>Olá, sou o<br><span class="grad">Hélio Julião<br>Paulo Cuna</span></h1>
       <div class="type">Eu crio <b id="typed"></b><span class="caret"></span></div>
       <div class="cta">
@@ -206,7 +214,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:v
     <div class="sec-title rv"><span class="n mono">01.</span><h2>Sobre mim</h2><span class="ln"></span></div>
     <div class="about">
       <div class="rv">
-        <p>Olá! Sou o <b>Hélio Julião Paulo Cuna</b>, também conhecido como <b>Alien Ghost</b>. Sou estudante e apaixonado por <b>programação e tecnologia</b>.</p>
+        <p>Olá! Sou o <b>Hélio Julião Paulo Cuna</b>, também conhecido como <b>Alien Ghost</b>. Sou estudante de <b>Engenharia Informática</b> na <b>Universidade Joaquim Alberto Chissano (UJAC)</b> e apaixonado por <b>programação e tecnologia</b>.</p>
         <p>Gosto de transformar ideias em coisas reais: <b>sites</b> para negócios, <b>bots de WhatsApp</b> que automatizam conversas e <b>aplicações</b> que resolvem problemas do dia a dia.</p>
         <p>Estou sempre a aprender algo novo — de <b>HTML e JavaScript</b> a <b>TypeScript, Python, Java e Android</b>. Cada projeto é uma oportunidade para evoluir.</p>
         <div class="stats">
@@ -216,7 +224,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:v
         </div>
       </div>
       <div class="facts rv">
-        <div class="card fact"><span class="i" data-icon="cap"></span><div><small>Ocupação</small>Estudante &amp; Developer</div></div>
+        <div class="card fact"><span class="i" data-icon="cap"></span><div><small>Curso</small>Engenharia Informática · UJAC</div></div>
         <div class="card fact"><span class="i" data-icon="pin"></span><div><small>Localização</small>Moçambique</div></div>
         <div class="card fact"><span class="i" data-icon="bot"></span><div><small>Especialidade</small>Bots de WhatsApp &amp; Websites</div></div>
         <div class="card fact"><span class="i" data-icon="chat"></span><div><small>Idiomas</small>Português</div></div>
@@ -226,9 +234,24 @@ footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:v
   </div>
 </section>
 
+<section id="formacao">
+  <div class="wrap">
+    <div class="sec-title rv"><span class="n mono">02.</span><h2>Formação</h2><span class="ln"></span></div>
+    <a class="card edu rv" href="https://www.ujac.ac.mz/" target="_blank" rel="noopener">
+      <img src="ujac.png" alt="Logótipo da UJAC">
+      <div>
+        <small class="mono">Licenciatura · Em curso</small>
+        <h3>Engenharia Informática</h3>
+        <p>Universidade Joaquim Alberto Chissano (UJAC) — Moçambique</p>
+        <span class="edu-link" data-icon="link">ujac.ac.mz</span>
+      </div>
+    </a>
+  </div>
+</section>
+
 <section id="skills">
   <div class="wrap">
-    <div class="sec-title rv"><span class="n mono">02.</span><h2>Habilidades</h2><span class="ln"></span></div>
+    <div class="sec-title rv"><span class="n mono">03.</span><h2>Habilidades</h2><span class="ln"></span></div>
     <div class="skills">
       <div class="card rv"><h3 data-icon="layout">Front-end</h3><div class="chips"><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">Design responsivo</span></div></div>
       <div class="card rv"><h3 data-icon="server">Back-end</h3><div class="chips"><span class="chip">Node.js</span><span class="chip">Python</span><span class="chip">Java</span><span class="chip">APIs</span></div></div>
@@ -242,7 +265,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:v
 
 <section id="projetos">
   <div class="wrap">
-    <div class="sec-title rv"><span class="n mono">03.</span><h2>Projetos</h2><span class="ln"></span></div>
+    <div class="sec-title rv"><span class="n mono">04.</span><h2>Projetos</h2><span class="ln"></span></div>
     <div class="filters rv" id="filters"><button class="on" data-f="all">Todos</button></div>
     <div class="projects" id="projects">
       <div class="skel"></div><div class="skel"></div><div class="skel"></div>
@@ -252,7 +275,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:v
 
 <section id="jornada">
   <div class="wrap">
-    <div class="sec-title rv"><span class="n mono">04.</span><h2>Jornada</h2><span class="ln"></span></div>
+    <div class="sec-title rv"><span class="n mono">05.</span><h2>Jornada</h2><span class="ln"></span></div>
     <div class="timeline">
       <div class="ev rv"><div class="when mono">2024</div><h3>Entrei no GitHub</h3><p>Criei a conta <b>Aliengho</b> e comecei a publicar os meus primeiros projetos e experiências com código.</p></div>
       <div class="ev rv"><div class="when mono">2024 – 2025</div><h3>Bots de WhatsApp</h3><p>Desenvolvi vários bots em JavaScript e TypeScript para automatizar conversas e serviços.</p></div>
@@ -265,7 +288,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:v
 
 <section id="terminal">
   <div class="wrap">
-    <div class="sec-title rv"><span class="n mono">05.</span><h2>Terminal</h2><span class="ln"></span></div>
+    <div class="sec-title rv"><span class="n mono">06.</span><h2>Terminal</h2><span class="ln"></span></div>
     <div class="term rv">
       <div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div>
       <div class="body" id="tbody"><div>Bem-vindo ao terminal do Alien Ghost — escreve <span class="p">ajuda</span> para ver os comandos.</div><div id="tline"><span class="p">hélio@aliengho:~$</span> <input id="tin" autocomplete="off" spellcheck="false" aria-label="comando"></div></div>
@@ -275,7 +298,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:v
 
 <section id="contacto">
   <div class="wrap contact rv">
-    <div class="sec-title" style="justify-content:center"><span class="n mono">06.</span><h2>Vamos conversar?</h2></div>
+    <div class="sec-title" style="justify-content:center"><span class="n mono">07.</span><h2>Vamos conversar?</h2></div>
     <p>Tens uma ideia de site, bot ou app? Ou queres colaborar num projeto? Fala comigo — respondo assim que puder!</p>
     <div class="socials">
       <a class="btn main" href="https://github.com/Aliengho" target="_blank" rel="noopener" data-icon="github">GitHub @Aliengho</a>
@@ -404,7 +427,7 @@ fetch('https://api.github.com/users/Aliengho').then(r => r.json()).then(u => {
 const tin = document.getElementById('tin'), tbody = document.getElementById('tbody'), tline = document.getElementById('tline');
 const cmds = {
   ajuda: 'Comandos: <span class="p">sobre</span>, <span class="p">skills</span>, <span class="p">projetos</span>, <span class="p">contacto</span>, <span class="p">github</span>, <span class="p">tema</span>, <span class="p">alien</span>, <span class="p">limpar</span>',
-  sobre: 'Hélio Julião Paulo Cuna — estudante e developer de Moçambique. Sites, bots e apps.',
+  sobre: 'Hélio Julião Paulo Cuna — estudante de Engenharia Informática na UJAC, Moçambique. Sites, bots e apps.',
   skills: 'HTML · CSS · JavaScript · TypeScript · Node.js · Python · Java · Android · Git',
   projetos: () => repos.length ? repos.slice(0,8).map(r => '• ' + esc(r.name)).join('<br>') : 'A carregar projetos…',
   contacto: 'GitHub: <a class="p" href="https://github.com/Aliengho" target="_blank">github.com/Aliengho</a>',
